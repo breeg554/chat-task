@@ -1,5 +1,4 @@
 import React from "react";
-import { useUsers } from "../../context/users";
 import { StyledCheckbox, StyledLabel, StyledSwitchWrapper } from "./style";
 
 interface SwitchProps {
@@ -8,11 +7,9 @@ interface SwitchProps {
 
 export const Switch: React.FC<SwitchProps> = ({ onChange }) => {
   return (
-    <>
-      <StyledSwitchWrapper>
-        <StyledCheckbox onChange={onChange} type="checkbox" id="checkbox" />
-        <StyledLabel htmlFor="checkbox" />
-      </StyledSwitchWrapper>
-    </>
+    <StyledSwitchWrapper>
+      <StyledCheckbox onChange={onChange} type="checkbox" id="checkbox" />
+      <StyledLabel htmlFor="checkbox" />
+    </StyledSwitchWrapper>
   );
 };

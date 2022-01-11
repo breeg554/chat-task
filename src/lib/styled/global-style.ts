@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     font-size: 10px;   //1rem = 10px
   }
-  body{
+  body,button,input{
     background-color: #fff;
     color: ${({ theme }) => theme.colors.core.primary}
   }
