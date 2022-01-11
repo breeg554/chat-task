@@ -9,8 +9,8 @@ export const Chat: React.FC<ChatProps> = () => {
   return (
     <ChatWrapper>
       <ChatHeader user={users.member} />
-      <ChatBody />
-      <ChatFooter />
+      <ChatBody currentUser={users.current} />
+      <ChatFooter currentUser={users.current} />
     </ChatWrapper>
   );
 };

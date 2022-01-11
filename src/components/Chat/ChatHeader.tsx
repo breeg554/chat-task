@@ -12,7 +12,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({ user }) => {
   return (
     <StyledChatHeader>
       <HeaderSiteWrapper>
-        <Avatar url={user.avatar} />
+        <Avatar url={user.avatar} name={user.name} />
         <Title>{user.name}</Title>
       </HeaderSiteWrapper>
       <HeaderSiteWrapper>

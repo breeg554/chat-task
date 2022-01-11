@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
-export const Text = styled.p`
+type Props = {
+  white?: boolean;
+};
+
+export const Text = styled.p<Props>`
   font-size: 14px;
-  color: ${({ theme }) => theme.colors.core.secondary};
-  margin-bottom: 6px;
+  color: ${({ theme, white }) => (white ? "#fff" : theme.colors.core.secondary)};
 `;

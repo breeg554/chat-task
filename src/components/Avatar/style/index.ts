@@ -1,11 +1,8 @@
 import styled from "styled-components";
-
-type Size = "sm" | "md";
-
-type Props = {
+import { Size } from "..";
+export type Props = {
   size?: Size;
 };
-
 const renderSize = (size: Size | undefined) => {
   switch (size) {
     case "sm":

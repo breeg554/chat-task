@@ -5,22 +5,24 @@ export const theme = {
     core: {
       primary: "#2C3E50",
       secondary: "#555555",
-      tertiary: "rgba(0,0,0,0.25)",
+      tertiary: "rgba(0,0,0,0.35)",
       success: "#74DD88",
     },
     hover: {
       primary: "#222",
       secondary: "#444",
-      tertiary: "rgba(0,0,0,0.4)",
+      tertiary: "rgba(0,0,0,0.5)",
       success: "#95ee99",
     },
   },
   gradients: {
     core: {
-      primary: "linear-gradient(to right, #00c6ff, #0072ff)",
+      primary:
+        "transparent linear-gradient(122deg, #3394CE 0%, #437CD4 62%, #4686D6 85%, #4D98D9 100%) 0% 0% no-repeat padding-box",
     },
     hover: {
-      primary: "linear-gradient(to right, #00a5dd, #0061dd)",
+      primary:
+        "transparent linear-gradient(122deg, #2294CE 0%, #327CD4 62%, #3586D6 85%, #3a98D9 100%) 0% 0% no-repeat padding-box",
     },
   },
 };

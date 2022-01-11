@@ -5,3 +5,4 @@ export * from "./Chat";
 export * from "./Header";
 export * from "./Avatar";
 export * from "./Button";
+export * from "./Message";

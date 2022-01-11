@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Size, Variant } from "..";
+import { Size, Variant } from "../..";
 
 type Props = {
   variant: Variant;

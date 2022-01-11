@@ -1,11 +1,11 @@
+import TextareaAutosize from "react-textarea-autosize";
 import styled from "styled-components";
-
 export const ChatWrapper = styled.div`
   width: 100%;
+  max-height: 75vh;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin: 24px 0;
-  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -36,27 +36,34 @@ export const StyledChatFooter = styled.div`
   gap: 12px;
 `;
 
-export const ChatInput = styled.div`
+export const ChatInput = styled(TextareaAutosize)`
   display: block;
   flex-grow: 1;
   max-width: calc(100% - 90px);
+  max-height: 100px;
+  overflow-y: auto;
   padding: 8px 12px;
   border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 14px;
-  &:empty:before {
-    content: attr(placeholder);
-    display: block;
-    color: #aaa;
-  }
-  &:hover {
-    cursor: text;
-  }
+
   &:focus {
-    outline: 1px solid rgba(0, 0, 0, 0.1);
+    outline: 1px solid rgba(0, 0, 0, 0.2);
   }
 `;
 export const StyledChatBody = styled.div`
-  flex-grow: 1;
   width: 100%;
-  padding: 24px 12px;
+  padding: 24px 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+`;
+export const NoMoreMessages = styled.span`
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  max-height: 160px;
+  margin-bottom: 32px;
+  color: ${({ theme }) => theme.colors.core.tertiary};
 `;
