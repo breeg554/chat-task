@@ -9,4 +9,5 @@ export const StyledMainLayout = styled.div`
 export const StyledLayoutBody = styled.main`
   width: 100%;
   max-width: 920px;
+  padding: 24px;
 `;

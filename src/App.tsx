@@ -1,11 +1,11 @@
-import React from "react";
+import { Chat, AppHeader } from "./components";
 import { AppProvider } from "./providers/app";
 
 const App = () => {
   return (
     <AppProvider>
-      <p>Hello word</p>
-      <p>dasda</p>
+      <AppHeader />
+      <Chat />
     </AppProvider>
   );
 };
