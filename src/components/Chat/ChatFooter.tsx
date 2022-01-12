@@ -2,8 +2,9 @@ import React, { useRef, useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import { FaImages } from "react-icons/fa";
 import { useMessages } from "../../context/messages";
-import { IconButton, TextButton, ChatInput, ChatModal } from "..";
+import { IconButton, TextButton } from "..";
 import { isMessageFileValid } from "../../utils";
+import { ChatInput, ChatModal } from ".";
 import { FileMessage, TextMessage, User } from "../../types";
 import { ChatModalActionWrapper, StyledChatFooter } from "./style";
 
@@ -17,7 +18,7 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState("");
   const [files, setFiles] = useState<File[] | null>(null);
-  console.log(files);
+
   const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
