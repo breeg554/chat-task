@@ -30,11 +30,10 @@ type TextContentProps = {
 export const StyledTextContent = styled.div<TextContentProps>`
   min-width: 200px;
   max-width: 250px;
-  background: ${({ isOwner, theme }) =>
-    isOwner ? theme.gradients.core.primary : "#fff"};
+  background: ${({ isOwner, theme }) => (isOwner ? theme.gradients.core.primary : "#fff")};
   padding: 12px;
   border-radius: ${({ isEdited }) => (isEdited ? "16px 16px 3px 3px" : "16px")};
-  box-shadow: 0px 0px 99px #cacaca;
+  box-shadow: 0px 0px 99px #ddd;
   white-space: pre-wrap;
 `;
 export const StyledFileContent = styled.div<{ isOwner: boolean }>`
@@ -49,8 +48,7 @@ export const StyledFileContent = styled.div<{ isOwner: boolean }>`
 `;
 export const StyledFileDescription = styled.div<{ isOwner: boolean }>`
   text-align: ${({ isOwner }) => (isOwner ? "right" : "left")};
-  background: ${({ isOwner, theme }) =>
-    isOwner ? theme.gradients.core.primary : "#fff"};
+  background: ${({ isOwner, theme }) => (isOwner ? theme.gradients.core.primary : "#fff")};
   border-radius: 12px;
   padding: 6px 12px;
   box-shadow: 0px 0px 99px #cacaca;

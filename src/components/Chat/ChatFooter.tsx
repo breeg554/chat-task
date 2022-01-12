@@ -27,6 +27,7 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
     setIsOpen(true);
   };
   const handleClear = () => {
+    if (ref.current) ref.current.value = "";
     setValue("");
     setFiles(null);
   };
@@ -96,13 +97,7 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
       />
       <ChatInput value={value} onChange={handleChangeValue} onEnter={handleCreateMsg} />
 
-      <IconButton
-        icon={<FiChevronRight />}
-        circle
-        variant="primary"
-        size="md"
-        onClick={handleCreateMsg}
-      />
+      <IconButton icon={<FiChevronRight />} circle variant="primary" size="md" onClick={handleCreateMsg} />
       {isOpen && (
         <ChatModal
           handleClose={handleClose}
@@ -110,13 +105,7 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
           files={files}
           render={() => (
             <>
-              <ChatInput
-                value={value}
-                onChange={handleChangeValue}
-                onEnter={handleCreateMsg}
-                fullSize
-              />
-
+              <ChatInput value={value} onChange={handleChangeValue} onEnter={handleCreateMsg} fullSize />
               <ChatModalActionWrapper>
                 <TextButton onClick={handleClose}>Cancel</TextButton>
                 <TextButton onClick={handleCreateMsg}>Send</TextButton>

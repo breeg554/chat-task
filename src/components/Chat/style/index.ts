@@ -85,7 +85,7 @@ export const StyledChatInput = styled<any>(TextareaAutosize)`
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 14px;
-
+  resize: none;
   &:focus {
     outline: 1px solid rgba(0, 0, 0, 0.2);
   }
