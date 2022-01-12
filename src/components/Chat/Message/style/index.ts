@@ -19,10 +19,11 @@ export const StyledMessage = styled.article<Props>`
   }
   .content-wrapper {
     order: ${({ isOwner }) => (isOwner ? 1 : 2)};
+    max-width: fit-content;
   }
 `;
 
-export const MessageContent = styled.div<Props>`
+export const StyledTextContent = styled.div<Props>`
   min-width: 200px;
   max-width: 70%;
   background: ${({ isOwner, theme }) =>
@@ -32,11 +33,39 @@ export const MessageContent = styled.div<Props>`
   box-shadow: 0px 0px 99px #cacaca;
   white-space: pre-wrap;
 `;
-
+export const StyledFileContent = styled.div<{ isOwner: boolean }>`
+  margin-right: 0;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  direction: ${({ isOwner }) => (isOwner ? "rtl" : "ltl")};
+  min-width: 200px;
+  max-width: 70%;
+  grid-gap: 6px;
+`;
+export const StyledFileDescription = styled.div<{ isOwner: boolean }>`
+  text-align: ${({ isOwner }) => (isOwner ? "right" : "left")};
+  background: ${({ isOwner, theme }) =>
+    isOwner ? theme.gradients.core.primary : "#fff"};
+  border-radius: 12px;
+  padding: 6px 12px;
+  box-shadow: 0px 0px 99px #cacaca;
+  margin-top: 6px;
+`;
+export const ImagePreview = styled.div`
+  max-width: 100px;
+  max-height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+`;
 export const MessageBtn = styled.button`
   background-color: transparent;
   border: none;
-
   color: ${({ theme }) => theme.colors.core.tertiary};
   cursor: pointer;
   &:hover {

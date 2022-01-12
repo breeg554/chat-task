@@ -1,9 +1,10 @@
 import React from "react";
 import dayjs from "../../../lib/dayjs";
-import { Avatar, Title, Text } from "../..";
+import { Avatar } from "../..";
 import { FileMessage, isFileMessage, TextMessage } from "../../../types";
-import { MessageBtn, MessageContent, MessageFooter, StyledMessage } from "./style";
+import { MessageBtn, MessageFooter, StyledMessage } from "./style";
 import { useMessages } from "../../../context/messages";
+import { FileContent, TextContent } from ".";
 
 interface MessageProps {
   data: TextMessage | FileMessage;
@@ -18,10 +19,12 @@ export const Message: React.FC<MessageProps> = React.memo(({ data, isOwner }) =>
         <Avatar url={data.author.avatar} size="sm" name={data.author.name} />
       </div>
       <div className="content-wrapper">
-        <MessageContent isOwner={isOwner}>
-          <Title white={isOwner}>{data.author.name}</Title>
-          <Text white={isOwner}>{isFileMessage(data) ? "file" : data.text}</Text>
-        </MessageContent>
+        {isFileMessage(data) ? (
+          <FileContent data={data} isOwner={isOwner} />
+        ) : (
+          <TextContent data={data} isOwner={isOwner} />
+        )}
+
         <MessageFooter>
           <span>{dayjs(data.createdAt).fromNow()}</span>
           {isOwner ? (
