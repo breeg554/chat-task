@@ -9,10 +9,7 @@ interface FileContentEditProps {
   handleClose: () => void;
 }
 
-export const FileContentEdit: React.FC<FileContentEditProps> = ({
-  data,
-  handleClose,
-}) => {
+export const FileContentEdit: React.FC<FileContentEditProps> = ({ data, handleClose }) => {
   const { updateMessage, removeMessage } = useMessages();
   const [files, setFiles] = useState<File[]>(data.files);
   const [value, setValue] = useState(data.description);
@@ -47,12 +44,7 @@ export const FileContentEdit: React.FC<FileContentEditProps> = ({
       files={files}
       render={() => (
         <>
-          <ChatInput
-            value={value || ""}
-            onChange={handleChangeValue}
-            onEnter={handleUpdate}
-            fullSize
-          />
+          <ChatInput value={value || ""} onChange={handleChangeValue} onEnter={handleUpdate} fullSize />
 
           <ChatModalActionWrapper>
             <TextButton onClick={handleClose}>Cancel</TextButton>

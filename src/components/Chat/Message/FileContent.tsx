@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { MessageFooter, FileContentEdit } from ".";
 import { Text } from "../..";
-import { FileMessage } from "../../../types";
-import {
-  ImagePreview,
-  StyledFileContent,
-  StyledFileDescription,
-  StyledModifiedMessage,
-} from "./style";
+import { FileMessage, isFile } from "../../../types";
+import { ImagePreview, StyledFileContent, StyledFileDescription, StyledModifiedMessage } from "./style";
 
 interface FileContentProps {
   data: FileMessage;
@@ -29,15 +24,14 @@ export const FileContent: React.FC<FileContentProps> = React.memo(({ data, isOwn
       <StyledFileContent isOwner={isOwner}>
         {data.files.map((file, index) => (
           <ImagePreview key={index}>
-            <img src={URL.createObjectURL(file)} alt={file.name} />
+            {/*only for display hard coded images that are not File type*/}
+            <img src={isFile(file) ? URL.createObjectURL(file) : file} alt={file.name} />
           </ImagePreview>
         ))}
       </StyledFileContent>
       {data.description && (
         <StyledFileDescription isOwner={isOwner}>
-          {data.updatedAt && (
-            <StyledModifiedMessage isOwner={isOwner}>Modified</StyledModifiedMessage>
-          )}
+          {data.updatedAt && <StyledModifiedMessage isOwner={isOwner}>Modified</StyledModifiedMessage>}
           <Text white={isOwner}>{data.description}</Text>
         </StyledFileDescription>
       )}

@@ -18,8 +18,9 @@ export interface FileMessage extends Message {
   description: string | null;
 }
 
-export const isFileMessage = (
-  message: TextMessage | FileMessage
-): message is FileMessage => {
+export const isFileMessage = (message: TextMessage | FileMessage): message is FileMessage => {
   return (message as FileMessage).files !== undefined;
+};
+export const isFile = (file: File | string): file is File => {
+  return (file as File).type !== undefined;
 };
