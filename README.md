@@ -1,4 +1,4 @@
-# Github Issues React
+# Chat app
 
 A simple web application that allows to search for users and repositories on Github.
 
@@ -20,7 +20,7 @@ A simple web application that allows to search for users and repositories on Git
 git clone https://github.com/breeg554/chat-task.git
 ```
 
-2. Go into gtihub-issues folder and install packages
+2. Go into chat-task folder and install packages
 
 ```
 npm install
@@ -28,4 +28,4 @@ npm install
 
 ## Live preview
 
-You can find the live preview of the app [here](https://upbeat-tereshkova-f81671.netlify.app/)
+You can find the live preview of the app [here](https://jovial-kilby-3b3948.netlify.app/)
