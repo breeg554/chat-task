@@ -1,4 +1,4 @@
-import img from "/media/example.jpg";
+import img from "../media/example.jpg";
 
 export const dummyUsers = {
   current: {
