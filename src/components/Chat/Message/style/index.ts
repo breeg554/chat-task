@@ -30,6 +30,7 @@ export const MessageContent = styled.div<Props>`
   padding: 12px;
   border-radius: 16px;
   box-shadow: 0px 0px 99px #cacaca;
+  white-space: pre-wrap;
 `;
 
 export const MessageBtn = styled.button`

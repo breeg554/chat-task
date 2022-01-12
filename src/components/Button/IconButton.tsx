@@ -1,8 +1,7 @@
 import React from "react";
 import { Size } from "..";
 import { StyledIconButton } from "./style";
-
-export type Variant = "primary" | "secondary";
+import { Variant } from "./types";
 
 interface IconButtonProps {
   icon: React.ReactNode;

@@ -1,9 +1,9 @@
 import React from "react";
-import dayjs from "../../lib/dayjs";
-import { Avatar, Title, Text } from "..";
-import { FileMessage, isFileMessage, TextMessage } from "../../types";
+import dayjs from "../../../lib/dayjs";
+import { Avatar, Title, Text } from "../..";
+import { FileMessage, isFileMessage, TextMessage } from "../../../types";
 import { MessageBtn, MessageContent, MessageFooter, StyledMessage } from "./style";
-import { useMessages } from "../../context/messages";
+import { useMessages } from "../../../context/messages";
 
 interface MessageProps {
   data: TextMessage | FileMessage;

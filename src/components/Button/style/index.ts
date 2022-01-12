@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import { Size, Variant } from "../..";
+import { Size } from "../..";
+import { Variant } from "../types";
 
-type Props = {
+type IconProps = {
   variant: Variant;
   circle: boolean;
   size: Size;
 };
 
-export const StyledIconButton = styled.button<Props>`
+export const StyledIconButton = styled.button<IconProps>`
   background: ${({ variant, theme }) =>
     variant === "primary" ? theme.gradients.core.primary : "transparent"};
   border-radius: ${({ circle }) => (circle ? "50%" : "3px")};
@@ -28,5 +29,20 @@ export const StyledIconButton = styled.button<Props>`
       variant === "primary" ? "#fff" : theme.colors.hover.tertiary};
     background: ${({ variant, theme }) =>
       variant === "primary" ? theme.gradients.hover.primary : "transparent"};
+  }
+`;
+
+export const StyledTextButon = styled.button`
+  background: transparent;
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.core.primary};
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.colors.hover.primary};
   }
 `;

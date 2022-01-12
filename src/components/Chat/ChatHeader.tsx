@@ -8,7 +8,7 @@ interface ChatHeaderProps {
   user: User;
 }
 
-export const ChatHeader: React.FC<ChatHeaderProps> = ({ user }) => {
+export const ChatHeader: React.FC<ChatHeaderProps> = React.memo(({ user }) => {
   return (
     <StyledChatHeader>
       <HeaderSiteWrapper>
@@ -22,4 +22,4 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({ user }) => {
       </HeaderSiteWrapper>
     </StyledChatHeader>
   );
-};
+});

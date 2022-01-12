@@ -13,12 +13,12 @@ export interface TextMessage extends Message {
   text: string;
 }
 export interface FileMessage extends Message {
-  file: string;
-  description: string;
+  files: File[];
+  description: string | null;
 }
 
 export const isFileMessage = (
   message: TextMessage | FileMessage
 ): message is FileMessage => {
-  return (message as FileMessage).file !== undefined;
+  return (message as FileMessage).files !== undefined;
 };

@@ -1,4 +1,4 @@
-import { Message } from "..";
+import { Message } from "./Message";
 import { useMessages } from "../../context/messages";
 import { User } from "../../types";
 import { sortMessages } from "../../utils";

@@ -36,10 +36,10 @@ export const StyledChatFooter = styled.div`
   gap: 12px;
 `;
 
-export const ChatInput = styled(TextareaAutosize)`
+export const ChatInput = styled<any>(TextareaAutosize)`
   display: block;
   flex-grow: 1;
-  max-width: calc(100% - 90px);
+  max-width: ${({ fullWidth }) => (fullWidth ? "100%" : "calc(100% - 90px)")};
   max-height: 100px;
   overflow-y: auto;
   padding: 8px 12px;
@@ -66,4 +66,26 @@ export const NoMoreMessages = styled.span`
   max-height: 160px;
   margin-bottom: 32px;
   color: ${({ theme }) => theme.colors.core.tertiary};
+`;
+
+export const ChatModalGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(142px, 1fr));
+  grid-gap: 6px;
+`;
+export const ChatModalImgPreview = styled.div`
+  position: relative;
+  width: 100%;
+  max-height: 100px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+export const ChatModalActionWrapper = styled.div`
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
 `;
