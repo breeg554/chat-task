@@ -17,7 +17,7 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState("");
   const [files, setFiles] = useState<File[] | null>(null);
-
+  console.log(files);
   const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };

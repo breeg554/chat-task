@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal component renders out and match the snapshot 1`] = `
+<div>
+  <div
+    class="sc-bBHxTw dsLWec"
+  >
+    <div
+      class="sc-iwjdpV tDeDv"
+    >
+      <div
+        class="sc-cxpSdN vtFXh"
+      >
+        <button
+          class="sc-iJKOTD gisiMl"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

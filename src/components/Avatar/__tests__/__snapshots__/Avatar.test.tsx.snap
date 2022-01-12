@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component renders out and match the snapshot 1`] = `
+<div>
+  <img
+    alt="User photo"
+    class="sc-bdvvtL bmqkUd"
+    src="https://userstock.io/data/wp-content/uploads/2020/06/tyler-nix-PQeoQdkU9jQ-1024x1024.jpg"
+  />
+</div>
+`;

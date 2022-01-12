@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message component renders out and match the snapshot 1`] = `
+<div>
+  <article
+    class="sc-dlVxhl krVXtK"
+  >
+    <div
+      class="avatar-wrapper"
+    >
+      <img
+        alt="Krystian Pach"
+        class="sc-ieecCq fZbkdH"
+        src="https://userstock.io/data/wp-content/uploads/2020/06/tyler-nix-PQeoQdkU9jQ-1024x1024.jpg"
+      />
+    </div>
+    <div
+      class="content-wrapper"
+    >
+      <div
+        class="sc-kfPuZi hMSVLP"
+      >
+        <h2
+          class="sc-eCImPb rPzDq"
+        >
+          Krystian Pach
+        </h2>
+        <p
+          class="sc-hKwDye ebVDgo"
+        >
+          Hello!
+        </p>
+      </div>
+      <footer
+        class="sc-llYSUQ kniSVK"
+      >
+        <span>
+          a day ago
+        </span>
+        <button
+          class="sc-cxpSdN ldBsik"
+        >
+          edit
+        </button>
+        <button
+          class="sc-cxpSdN ldBsik"
+        >
+          delete
+        </button>
+      </footer>
+    </div>
+  </article>
+</div>
+`;

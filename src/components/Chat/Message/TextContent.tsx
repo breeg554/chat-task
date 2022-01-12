@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import dayjs from "../../../lib/dayjs";
 import { Title, Text } from "../..";
 import { TextMessage } from "../../../types";
 import { MessageFooter, TextContentEdit } from ".";
@@ -23,7 +24,9 @@ export const TextContent: React.FC<TextContentProps> = React.memo(({ data, isOwn
     <>
       <StyledTextContent isOwner={isOwner} isEdited={isEdited}>
         {data.updatedAt && (
-          <StyledModifiedMessage isOwner={isOwner}>Modified</StyledModifiedMessage>
+          <StyledModifiedMessage isOwner={isOwner}>
+            Modified {data.updatedAt && dayjs(data.updatedAt).fromNow()}
+          </StyledModifiedMessage>
         )}
         <Title white={isOwner}>{data.author.name}</Title>
         <Text white={isOwner}>{data.text}</Text>
