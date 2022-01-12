@@ -8,6 +8,7 @@ interface MessagesProviderProps {
 interface Context {
   messages: (TextMessage | FileMessage)[];
   sendMessage: (newMsg: TextMessage | FileMessage) => void;
+  updateMessage: (updated: TextMessage | FileMessage) => void;
   removeMessage: (id: number) => void;
 }
 
@@ -25,8 +26,14 @@ const MessagesProvider = ({ children }: MessagesProviderProps) => {
   const removeMessage = (id: number) => {
     setMessages([...messages].filter((msg) => msg.id !== id));
   };
+  const updateMessage = (updated: TextMessage | FileMessage) => {
+    setMessages([...messages].map((msg) => (msg.id === updated.id ? updated : msg)));
+  };
+
   return (
-    <MessagesContext.Provider value={{ messages, sendMessage, removeMessage }}>
+    <MessagesContext.Provider
+      value={{ messages, sendMessage, removeMessage, updateMessage }}
+    >
       {children}
     </MessagesContext.Provider>
   );

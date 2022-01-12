@@ -2,21 +2,17 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { IconButton, Modal } from "..";
 import { CloseButton } from "../Modal/style";
-import { ChatInput, ChatModalGrid, ChatModalImgPreview } from "./style";
+import { ChatModalGrid, ChatModalImgPreview } from "./style";
 
 interface ChatModalProps {
   handleClose: () => void;
   files: File[] | null;
-  value: string;
-  handleChangeValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleRemoveFile: (lastModified: number) => void;
   render?: () => React.ReactNode;
 }
 
 export const ChatModal: React.FC<ChatModalProps> = ({
   files,
-  value,
-  handleChangeValue,
   handleClose,
   handleRemoveFile,
   render,

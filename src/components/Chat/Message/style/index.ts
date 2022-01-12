@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-type Props = {
+type MessageProps = {
   isOwner: boolean;
 };
 
-export const StyledMessage = styled.article<Props>`
+export const StyledMessage = styled.article<MessageProps>`
   flex-grow: 1;
   gap: 8px;
   display: flex;
@@ -14,6 +14,7 @@ export const StyledMessage = styled.article<Props>`
   margin-right: ${({ isOwner }) => (isOwner ? 0 : "auto")};
   margin-top: 16px;
   margin-bottom: 16px;
+  word-wrap: break-word;
   .avatar-wrapper {
     order: ${({ isOwner }) => (isOwner ? 2 : 1)};
   }
@@ -22,14 +23,17 @@ export const StyledMessage = styled.article<Props>`
     max-width: fit-content;
   }
 `;
-
-export const StyledTextContent = styled.div<Props>`
+type TextContentProps = {
+  isOwner: boolean;
+  isEdited: boolean;
+};
+export const StyledTextContent = styled.div<TextContentProps>`
   min-width: 200px;
-  max-width: 70%;
+  max-width: 250px;
   background: ${({ isOwner, theme }) =>
     isOwner ? theme.gradients.core.primary : "#fff"};
   padding: 12px;
-  border-radius: 16px;
+  border-radius: ${({ isEdited }) => (isEdited ? "16px 16px 3px 3px" : "16px")};
   box-shadow: 0px 0px 99px #cacaca;
   white-space: pre-wrap;
 `;
@@ -73,7 +77,7 @@ export const MessageBtn = styled.button`
   }
 `;
 
-export const MessageFooter = styled.footer`
+export const StyledMessageFooter = styled.footer`
   display: flex;
   gap: 4px;
   margin-top: 8px;
@@ -88,5 +92,20 @@ export const MessageFooter = styled.footer`
     border-left: 1px solid ${({ theme }) => theme.colors.core.tertiary};
     border-right: 1px solid ${({ theme }) => theme.colors.core.tertiary};
     padding: 0 6px;
+  }
+`;
+export const StyledModifiedMessage = styled.span<{ isOwner: boolean }>`
+  display: inline-block;
+  color: ${({ isOwner }) => (isOwner ? "#eee" : "#555")};
+  font-style: italic;
+  margin-bottom: 4px;
+`;
+export const StyledTextContentEdit = styled.div`
+  width: 100%;
+  .site-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    font-size: 12pxl;
   }
 `;

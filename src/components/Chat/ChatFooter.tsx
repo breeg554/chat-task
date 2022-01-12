@@ -1,12 +1,12 @@
+import React, { useRef, useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import { FaImages } from "react-icons/fa";
-import { IconButton, TextButton } from "..";
-import { ChatInput, ChatModalActionWrapper, StyledChatFooter } from "./style";
-import React, { useRef, useState } from "react";
 import { useMessages } from "../../context/messages";
-import { FileMessage, TextMessage, User } from "../../types";
-import { ChatModal } from "./ChatModal";
+import { IconButton, TextButton, ChatInput, ChatModal } from "..";
 import { isMessageFileValid } from "../../utils";
+import { FileMessage, TextMessage, User } from "../../types";
+import { ChatModalActionWrapper, StyledChatFooter } from "./style";
+
 interface ChatFooterProps {
   currentUser: User;
 }
@@ -31,9 +31,10 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
     setFiles(null);
   };
   const handleClose = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(false);
     handleClear();
   };
+
   const handleChangeFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files || e.target.files.length === 0) return setFiles(null);
 
@@ -47,6 +48,7 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
 
     setFiles([...filtered]);
   };
+
   const handleRemoveFile = (lastModified: number) => {
     if (!files) return;
 
@@ -80,11 +82,6 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
     sendMessage(newMessage);
     handleClose();
   };
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.shiftKey || e.key !== "Enter") return;
-    e.preventDefault();
-    handleCreateMsg();
-  };
 
   return (
     <StyledChatFooter>
@@ -97,12 +94,8 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
         style={{ display: "none" }}
         onChange={handleChangeFiles}
       />
-      <ChatInput
-        placeholder="Message..."
-        value={value}
-        onChange={handleChangeValue}
-        onKeyDown={handleKeyDown}
-      />
+      <ChatInput value={value} onChange={handleChangeValue} onEnter={handleCreateMsg} />
+
       <IconButton
         icon={<FiChevronRight />}
         circle
@@ -113,19 +106,17 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
       {isOpen && (
         <ChatModal
           handleClose={handleClose}
-          handleChangeValue={handleChangeValue}
           handleRemoveFile={handleRemoveFile}
-          value={value}
           files={files}
           render={() => (
             <>
               <ChatInput
-                placeholder="Message..."
                 value={value}
                 onChange={handleChangeValue}
-                onKeyDown={handleKeyDown}
-                fullWidth
+                onEnter={handleCreateMsg}
+                fullSize
               />
+
               <ChatModalActionWrapper>
                 <TextButton onClick={handleClose}>Cancel</TextButton>
                 <TextButton onClick={handleCreateMsg}>Send</TextButton>

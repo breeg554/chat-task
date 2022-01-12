@@ -1,5 +1,5 @@
-import TextareaAutosize from "react-textarea-autosize";
 import styled from "styled-components";
+import TextareaAutosize from "react-textarea-autosize";
 export const ChatWrapper = styled.div`
   width: 100%;
   max-height: 75vh;
@@ -36,21 +36,6 @@ export const StyledChatFooter = styled.div`
   gap: 12px;
 `;
 
-export const ChatInput = styled<any>(TextareaAutosize)`
-  display: block;
-  flex-grow: 1;
-  max-width: ${({ fullWidth }) => (fullWidth ? "100%" : "calc(100% - 90px)")};
-  max-height: 100px;
-  overflow-y: auto;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 14px;
-
-  &:focus {
-    outline: 1px solid rgba(0, 0, 0, 0.2);
-  }
-`;
 export const StyledChatBody = styled.div`
   width: 100%;
   padding: 24px 16px;
@@ -88,4 +73,20 @@ export const ChatModalActionWrapper = styled.div`
   display: flex;
   gap: 12px;
   justify-content: flex-end;
+`;
+
+export const StyledChatInput = styled<any>(TextareaAutosize)`
+  display: block;
+  flex-grow: 1;
+  width: ${({ fullSize }) => (fullSize ? "100%" : "calc(100% - 90px)")};
+  max-height: 100px;
+  overflow-y: auto;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+
+  &:focus {
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+  }
 `;

@@ -17,6 +17,7 @@ export const dummyMessages = [
   {
     id: 1,
     createdAt: 1641932804208,
+
     text: "Hello!",
     author: {
       id: 1,
@@ -72,6 +73,7 @@ export const dummyMessages = [
   {
     id: 6,
     createdAt: 1641922804208,
+    updatedAt: 1641922804208,
     text: "Hi!",
     author: {
       id: 2,

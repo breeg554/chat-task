@@ -32,9 +32,9 @@ export const StyledIconButton = styled.button<IconProps>`
   }
 `;
 
-export const StyledTextButon = styled.button`
+export const StyledTextButon = styled.button<{ size: Size }>`
   background: transparent;
-  font-size: 14px;
+  font-size: ${({ size }) => (size === "md" ? "14px" : "12px")};
   color: ${({ theme }) => theme.colors.core.primary};
   border: none;
   display: flex;

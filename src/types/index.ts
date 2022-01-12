@@ -8,6 +8,7 @@ export interface Message {
   id: number;
   author: User;
   createdAt: number;
+  updatedAt?: number;
 }
 export interface TextMessage extends Message {
   text: string;
