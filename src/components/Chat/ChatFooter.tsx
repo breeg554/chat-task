@@ -38,7 +38,7 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ currentUser }) => {
   };
 
   const handleChangeFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files || e.target.files.length === 0) return setFiles(null);
+    if (!e.target.files || e.target.files.length === 0) return handleClear();
 
     const filtered = [...e.target.files].filter((file) => {
       if (isMessageFileValid(file)) return true;

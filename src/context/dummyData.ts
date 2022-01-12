@@ -1,4 +1,4 @@
-import Img from "../media/example.jpg";
+import img from "/media/example.jpg";
 
 export const dummyUsers = {
   current: {
@@ -93,7 +93,7 @@ export const dummyMessages = [
   {
     id: 77,
     createdAt: 1641981899208,
-    files: [Img],
+    files: [img],
     description: "Check this out!",
     author: {
       id: 1,

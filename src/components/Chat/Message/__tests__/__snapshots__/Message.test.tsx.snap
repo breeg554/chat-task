@@ -28,22 +28,22 @@ exports[`Message component renders out and match the snapshot 1`] = `
         <p
           class="sc-hKwDye ebVDgo"
         >
-          Hello!
+          Hello how are you?!
         </p>
       </div>
       <footer
-        class="sc-llYSUQ kniSVK"
+        class="sc-iJKOTD lgfMDf"
       >
         <span>
           a day ago
         </span>
         <button
-          class="sc-cxpSdN ldBsik"
+          class="sc-llYSUQ iYtcME"
         >
           edit
         </button>
         <button
-          class="sc-cxpSdN ldBsik"
+          class="sc-llYSUQ iYtcME"
         >
           delete
         </button>

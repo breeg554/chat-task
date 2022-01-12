@@ -1,8 +1,10 @@
+import "react-medium-image-zoom/dist/styles.css";
 import React, { useState } from "react";
+import Zoom from "react-medium-image-zoom";
 import { MessageFooter, FileContentEdit } from ".";
 import { Text } from "../..";
 import { FileMessage, isFile } from "../../../types";
-import { ImagePreview, StyledFileContent, StyledFileDescription, StyledModifiedMessage } from "./style";
+import { ImagePreview, StyledFileContent, StyledFileDescription, StyledImage, StyledModifiedMessage } from "./style";
 
 interface FileContentProps {
   data: FileMessage;
@@ -24,8 +26,10 @@ export const FileContent: React.FC<FileContentProps> = React.memo(({ data, isOwn
       <StyledFileContent isOwner={isOwner}>
         {data.files.map((file, index) => (
           <ImagePreview key={index}>
-            {/*only for display hard coded images that are not File type*/}
-            <img src={isFile(file) ? URL.createObjectURL(file) : file} alt={file.name} />
+            <Zoom zoomMargin={40}>
+              {/*only for display hard coded images that are not File type*/}
+              <StyledImage src={isFile(file) ? URL.createObjectURL(file) : file} alt={file.name} />
+            </Zoom>
           </ImagePreview>
         ))}
       </StyledFileContent>

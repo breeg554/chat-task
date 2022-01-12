@@ -1,6 +1,6 @@
 # Chat app
 
-A simple web application that allows to search for users and repositories on Github.
+A simple chat app
 
 - [1. Technologies](#1-Technologies)
 - [2. Installation](#2-Installation)

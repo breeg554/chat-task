@@ -59,11 +59,12 @@ export const ImagePreview = styled.div`
   max-height: 120px;
   border-radius: 10px;
   overflow: hidden;
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+`;
+export const StyledImage = styled.img`
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
 `;
 export const MessageBtn = styled.button`
   background-color: transparent;

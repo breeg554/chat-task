@@ -3,16 +3,16 @@
 exports[`Modal component renders out and match the snapshot 1`] = `
 <div>
   <div
-    class="sc-bBHxTw dsLWec"
+    class="sc-iwjdpV hhHzTJ"
   >
     <div
-      class="sc-iwjdpV tDeDv"
+      class="sc-cxpSdN jOpHSD"
     >
       <div
-        class="sc-cxpSdN vtFXh"
+        class="sc-llYSUQ jYuVdl"
       >
         <button
-          class="sc-iJKOTD gisiMl"
+          class="sc-giYglK dTErTV"
         >
           <svg
             fill="currentColor"
